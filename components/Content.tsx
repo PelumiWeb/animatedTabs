@@ -1,6 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import Animated, { FadeInRight } from "react-native-reanimated";
+import Animated, {
+  FadeInRight,
+  FadeOutRight,
+  LayoutAnimationConfig,
+} from "react-native-reanimated";
 import { useAppSelector } from "@/store/hooks";
 
 type Props = {};
@@ -17,9 +21,14 @@ const Content = ({ data }: { data: dataProps }) => {
 
   return (
     activeTabs === data.name && (
-      <Animated.View
-        style={[styles.container, { backgroundColor: data.backgroundColor }]}
-        entering={FadeInRight.springify()}></Animated.View>
+      <LayoutAnimationConfig skipEntering>
+        <Animated.View
+          style={[styles.container, { backgroundColor: data.backgroundColor }]}
+          entering={FadeInRight.springify().damping(80).stiffness(200)}
+          exiting={FadeOutRight.springify()
+            .damping(80)
+            .stiffness(200)}></Animated.View>
+      </LayoutAnimationConfig>
     )
   );
 };

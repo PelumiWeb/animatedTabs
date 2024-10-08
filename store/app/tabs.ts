@@ -9,15 +9,23 @@ export interface ModalState {
   };
 }
 
+// const IconNames = [
+//   { icon: "lifeBuoy", label: "Buoy" },
+//   { icon: "Fish", label: "Fresh fish" },
+//   { icon: "Sailboot", label: "Sail" },
+//   { icon: "Ship", label: "Ship it" },
+//   { icon: "ShipWheel", label: "Manage it" },
+// ];
+
 const initialState: ModalState = {
   tabs: {
     active: "Buoy",
     data: [
-  { id: 1, name: "Buoy", iconName: "settings", backgroundColor: "red" },
-  { id: 2, name: "Fresh fish", iconName: "", backgroundColor: "yellow" },
-  { id: 3, name: "Sail", iconName: "", backgroundColor: "blue" },
-  { id: 4, name: "Ship it", iconName: "", backgroundColor: "green" },
-  { id: 5, name: "Manage it", iconName: "", backgroundColor: "pink" },
+  { id: 1, name: "Buoy", iconName: "LifeBuoy", backgroundColor: "#FF005C" },
+  { id: 2, name: "Fresh fish", iconName: "Fish", backgroundColor: "#FFBD00" },
+  { id: 3, name: "Sail", iconName: "Sailboat", backgroundColor: "#00B3E6" },
+  { id: 4, name: "Ship it", iconName: "Ship", backgroundColor: "#00CC96" },
+  { id: 5, name: "Manage it", iconName: "ShipWheel", backgroundColor: "gold" },
 ],
   },
  

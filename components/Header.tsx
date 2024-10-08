@@ -6,11 +6,16 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useAppSelector } from "@/store/hooks";
 import { useDispatch } from "react-redux";
 import { setActive } from "@/store/app/tabs";
+import { icons } from "lucide-react-native";
+
+type iconNames = keyof typeof icons;
+
 
 export type dataProps = {
   name: string;
-  iconName: string;
+  iconName: iconNames;
   id: number;
+  backgroundColor: string;
 };
 
 type Props = {
@@ -38,6 +43,7 @@ const Header = () => {
             name={data.name}
             iconName={data.iconName}
             id={data.id}
+            backgroundColor={data.backgroundColor}
           />
         ))}
       </View>
